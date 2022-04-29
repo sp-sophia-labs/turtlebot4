@@ -291,6 +291,20 @@ void Turtlebot4::comms_timer(const std::chrono::milliseconds timeout)
 }
 
 /**
+ * @brief Creates and runs timer for powering off the robot when low battery
+ * @input timeout - Sets timer period in milliseconds
+ */
+void Turtlebot4::power_off_timer(const std::chrono::milliseconds timeout)
+{
+  power_off_timer_ = this->create_wall_timer(
+    timeout,
+    [this]() -> void
+    {
+      power_function_callback();
+    });
+}
+
+/**
  * @brief Battery subscription callback
  * @input battery_state_msg - Received message on battery topic
  */
@@ -309,10 +323,13 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
       leds_->set_led(BATTERY, GREEN);
     } else if (battery_state_msg->percentage > 0.2) {
       leds_->set_led(BATTERY, YELLOW);
-    } else if (battery_state_msg->percentage > 0.05) {
+    } else if (battery_state_msg->percentage > 0.1) {
       leds_->set_led(BATTERY, RED);
+      power_off_timer_->cancel();
     } else {
       leds_->blink(BATTERY, 200, 0.5, RED);
+      // Wait 60s before powering off
+      power_off_timer(std::chrono::milliseconds(60000));
     }
   }
 }

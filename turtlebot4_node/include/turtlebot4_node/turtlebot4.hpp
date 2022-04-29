@@ -111,6 +111,9 @@ private:
   // Run comms timer
   void comms_timer(const std::chrono::milliseconds timeout);
 
+  // Run power off timer
+  void power_off_timer(const std::chrono::milliseconds timeout);
+
   // IP
   std::string get_ip();
   std::string wifi_interface_;
@@ -148,6 +151,7 @@ private:
   rclcpp::TimerBase::SharedPtr leds_timer_;
   rclcpp::TimerBase::SharedPtr wifi_timer_;
   rclcpp::TimerBase::SharedPtr comms_timer_;
+  rclcpp::TimerBase::SharedPtr power_off_timer_;
 
   // Subscribers
   rclcpp::Subscription<sensor_msgs::msg::BatteryState>::SharedPtr battery_sub_;
