@@ -37,6 +37,7 @@
 #include "turtlebot4_node/utils.hpp"
 
 #include "irobot_create_msgs/msg/wheel_status.hpp"
+#include "irobot_create_msgs/msg/lightring_leds.hpp"
 #include "irobot_create_msgs/action/undock.hpp"
 #include "irobot_create_msgs/action/dock_servo.hpp"
 #include "irobot_create_msgs/action/wall_follow.hpp"
@@ -159,6 +160,7 @@ private:
 
   // Publishers
   rclcpp::Publisher<std_msgs::msg::String>::SharedPtr ip_pub_;
+  rclcpp::Publisher<irobot_create_msgs::msg::LightringLeds>::SharedPtr lightring_pub_;
 
   // Store current wheels state
   bool wheels_enabled_;

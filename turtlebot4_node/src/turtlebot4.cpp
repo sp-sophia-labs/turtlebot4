@@ -142,6 +142,10 @@ Turtlebot4::Turtlebot4()
     "ip",
     rclcpp::QoS(rclcpp::KeepLast(10)));
 
+  lightring_pub_ = this->create_publisher<irobot_create_msgs::msg::LightringLeds>(
+    "cmd_lightring",
+    rclcpp::SensorDataQoS());
+
   // Create action/service clients
   dock_client_ = std::make_unique<Turtlebot4Action<Dock>>(node_handle_, "dock");
   undock_client_ = std::make_unique<Turtlebot4Action<Undock>>(node_handle_, "undock");
@@ -310,6 +314,28 @@ void Turtlebot4::power_off_timer(const std::chrono::milliseconds timeout)
  */
 void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPtr battery_state_msg)
 {
+  if (battery_state_msg->percentage <= 0.1) {
+    // Discharging
+    if (battery_state_msg->current < 0.0) {
+      // Wait 60s before powering off
+      power_off_timer(std::chrono::milliseconds(60000));
+    } else {
+      power_off_timer_->cancel();
+    }
+  } else if (battery_state_msg->percentage <= 0.2) {
+    auto lightring_msg = irobot_create_msgs::msg::LightringLeds();
+
+    for (int i = 0; i < 6; i++) {
+      lightring_msg.leds[i].red = 255;
+    }
+
+    lightring_msg.header.stamp = this->get_clock()->now();
+    lightring_msg.override_system = false;
+
+    lightring_pub_->publish(lightring_msg);
+  }
+
+  // Set Battery LED on standard robots
   if (model_ == Turtlebot4Model::STANDARD) {
     display_->set_battery(battery_state_msg);
 
@@ -328,8 +354,6 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
       power_off_timer_->cancel();
     } else {
       leds_->blink(BATTERY, 200, 0.5, RED);
-      // Wait 60s before powering off
-      power_off_timer(std::chrono::milliseconds(60000));
     }
   }
 }
