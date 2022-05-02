@@ -304,6 +304,7 @@ void Turtlebot4::power_off_timer(const std::chrono::milliseconds timeout)
     timeout,
     [this]() -> void
     {
+      RCLCPP_INFO(this->get_logger(), "Powering off");
       power_function_callback();
     });
 }
@@ -317,12 +318,15 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
   if (battery_state_msg->percentage <= 0.1) {
     // Discharging
     if (battery_state_msg->current < 0.0) {
+      RCLCPP_INFO(this->get_logger(), "Low battery, starting power off timer");
       // Wait 60s before powering off
       power_off_timer(std::chrono::milliseconds(60000));
     } else {
+      RCLCPP_INFO(this->get_logger(), "Low battery, charging, disabling power off timer");
       power_off_timer_->cancel();
     }
   } else if (battery_state_msg->percentage <= 0.2) {
+    RCLCPP_INFO(this->get_logger(), "Low battery, setting lightring");
     auto lightring_msg = irobot_create_msgs::msg::LightringLeds();
 
     for (int i = 0; i < 6; i++) {
@@ -332,6 +336,7 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
     lightring_msg.header.stamp = this->get_clock()->now();
     lightring_msg.override_system = false;
 
+    RCLCPP_INFO(this->get_logger(), "Publishing lightring");
     lightring_pub_->publish(lightring_msg);
   }
 
@@ -351,7 +356,6 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
       leds_->set_led(BATTERY, YELLOW);
     } else if (battery_state_msg->percentage > 0.1) {
       leds_->set_led(BATTERY, RED);
-      power_off_timer_->cancel();
     } else {
       leds_->blink(BATTERY, 200, 0.5, RED);
     }
