@@ -41,6 +41,7 @@
 #include "irobot_create_msgs/action/undock.hpp"
 #include "irobot_create_msgs/action/dock_servo.hpp"
 #include "irobot_create_msgs/action/wall_follow.hpp"
+#include "irobot_create_msgs/action/led_animation.hpp"
 #include "irobot_create_msgs/srv/e_stop.hpp"
 #include "irobot_create_msgs/srv/robot_power.hpp"
 
@@ -63,6 +64,7 @@ public:
   using Dock = irobot_create_msgs::action::DockServo;
   using Undock = irobot_create_msgs::action::Undock;
   using WallFollow = irobot_create_msgs::action::WallFollow;
+  using LedAnimation = irobot_create_msgs::action::LedAnimation;
   using EStop = irobot_create_msgs::srv::EStop;
   using Power = irobot_create_msgs::srv::RobotPower;
 
@@ -96,6 +98,8 @@ private:
 
   void add_button_function_callbacks();
   void add_menu_function_callbacks();
+
+  void low_battery_animation();
 
   // Run display timer
   void display_timer(const std::chrono::milliseconds timeout);
@@ -141,6 +145,7 @@ private:
   std::unique_ptr<Turtlebot4Action<Dock>> dock_client_;
   std::unique_ptr<Turtlebot4Action<Undock>> undock_client_;
   std::unique_ptr<Turtlebot4Action<WallFollow>> wall_follow_client_;
+  std::unique_ptr<Turtlebot4Action<LedAnimation>> led_animation_client_;
 
   // Services
   std::unique_ptr<Turtlebot4Service<EStop>> estop_client_;

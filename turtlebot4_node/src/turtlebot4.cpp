@@ -36,6 +36,7 @@ using turtlebot4::Turtlebot4;
 using Dock = irobot_create_msgs::action::DockServo;
 using Undock = irobot_create_msgs::action::Undock;
 using WallFollow = irobot_create_msgs::action::WallFollow;
+using LedAnimation = irobot_create_msgs::action::LedAnimation;
 using EStop = irobot_create_msgs::srv::EStop;
 using Power = irobot_create_msgs::srv::RobotPower;
 
@@ -150,6 +151,7 @@ Turtlebot4::Turtlebot4()
   dock_client_ = std::make_unique<Turtlebot4Action<Dock>>(node_handle_, "dock");
   undock_client_ = std::make_unique<Turtlebot4Action<Undock>>(node_handle_, "undock");
   wall_follow_client_ = std::make_unique<Turtlebot4Action<WallFollow>>(node_handle_, "wall_follow");
+  led_animation_client_ = std::make_unique<Turtlebot4Action<LedAnimation>>(node_handle_, "led_animation");
   estop_client_ = std::make_unique<Turtlebot4Service<EStop>>(node_handle_, "e_stop");
   power_client_ = std::make_unique<Turtlebot4Service<Power>>(node_handle_, "robot_power");
 
@@ -319,31 +321,20 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
     // Discharging
     if (battery_state_msg->current < 0.0) {
       // Wait 60s before powering off
-      if (power_off_timer_ == nullptr || power_off_timer_->is_canceled())
-      {
+      if (power_off_timer_ == nullptr || power_off_timer_->is_canceled()) {
         RCLCPP_WARN(this->get_logger(), "Low battery, starting power off timer");
         power_off_timer(std::chrono::milliseconds(60000));
       }
     } else {
-      if (power_off_timer_ != nullptr && !power_off_timer_->is_canceled())
-      {
+      if (power_off_timer_ != nullptr && !power_off_timer_->is_canceled()) {
         RCLCPP_INFO(this->get_logger(), "Charging, canceling power off timer");
         power_off_timer_->cancel();
       }
     }
   } else if (battery_state_msg->percentage <= 0.2) {
     RCLCPP_INFO(this->get_logger(), "Low battery, setting lightring");
-    auto lightring_msg = irobot_create_msgs::msg::LightringLeds();
-
-    for (int i = 0; i < 6; i++) {
-      lightring_msg.leds[i].red = 255;
-    }
-
-    lightring_msg.header.stamp = this->get_clock()->now();
-    lightring_msg.override_system = false;
-
-    RCLCPP_INFO(this->get_logger(), "Publishing lightring");
-    lightring_pub_->publish(lightring_msg);
+    
+    low_battery_animation();
   }
 
   // Set Battery LED on standard robots
@@ -380,6 +371,28 @@ void Turtlebot4::wheel_status_callback(
     } else {
       leds_->set_led(MOTORS, OFF);
     }
+  }
+}
+
+void Turtlebot4::low_battery_animation()
+{
+  if (led_animation_client_ != nullptr) {
+    auto animation_msg = std::make_shared<LedAnimation::Goal>();
+    auto lightring_msg = irobot_create_msgs::msg::LightringLeds();
+
+    for (int i = 0; i < 6; i++) {
+      lightring_msg.leds[i].red = 255;
+    }
+    lightring_msg.header.stamp = this->get_clock()->now();
+    lightring_msg.override_system = true;
+
+    animation_msg->lightring = lightring_msg;
+    animation_msg->animation_type = animation_msg->BLINK_LIGHTS;
+    animation_msg->max_runtime.sec = 5;
+
+    led_animation_client_->send_goal(animation_msg);
+  } else {
+    RCLCPP_ERROR(this->get_logger(), "LED animation client NULL");
   }
 }
 
