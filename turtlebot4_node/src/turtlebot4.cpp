@@ -320,10 +320,16 @@ void Turtlebot4::battery_callback(const sensor_msgs::msg::BatteryState::SharedPt
     if (battery_state_msg->current < 0.0) {
       RCLCPP_INFO(this->get_logger(), "Low battery, starting power off timer");
       // Wait 60s before powering off
-      power_off_timer(std::chrono::milliseconds(60000));
+      if (power_off_timer_->is_canceled())
+      {
+        power_off_timer(std::chrono::milliseconds(60000));
+      }
     } else {
-      RCLCPP_INFO(this->get_logger(), "Low battery, charging, disabling power off timer");
-      power_off_timer_->cancel();
+      if (!power_off_timer_->is_canceled())
+      {
+        RCLCPP_INFO(this->get_logger(), "Low battery, charging, disabling power off timer");
+        power_off_timer_->cancel();
+      }
     }
   } else if (battery_state_msg->percentage <= 0.2) {
     RCLCPP_INFO(this->get_logger(), "Low battery, setting lightring");
