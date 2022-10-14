@@ -9,6 +9,12 @@
   <xacro:include filename="$(find turtlebot4_description)/urdf/standard/tower_sensor_plate.urdf.xacro" />
   <xacro:include filename="$(find turtlebot4_description)/urdf/standard/weight_block.urdf.xacro" />
 
+  <!-- Gazebo version -->
+  <xacro:arg name="gazebo"                             default="classic" />
+
+  <!-- Namespace -->
+  <xacro:arg name="namespace"                          default=""/>
+
   <!-- Mechanical properties -->
   <xacro:property name="shell_z_offset"                value="${3*cm2m}" />
   <xacro:property name="shell_radius"                  value="${12*cm2m}" />

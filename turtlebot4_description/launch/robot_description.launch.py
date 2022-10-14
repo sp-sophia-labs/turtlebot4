@@ -32,6 +32,8 @@ ARGUMENTS = [
     DeclareLaunchArgument('use_sim_time', default_value='false',
                           choices=['true', 'false'],
                           description='use_sim_time'),
+    DeclareLaunchArgument('namespace', default_value='',
+                          description='robot namespace'), 
 ]
 
 
@@ -41,15 +43,21 @@ def generate_launch_description():
                                        'urdf',
                                        LaunchConfiguration('model'),
                                        'turtlebot4.urdf.xacro'])
+    namespace = LaunchConfiguration('namespace')
+    frame_prefix = [namespace, '/']
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
+        namespace=namespace,
         output='screen',
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
-            {'robot_description': Command(['xacro', ' ', xacro_file, ' ', 'gazebo:=ignition'])},
+            {'robot_description': Command(['xacro', ' ', xacro_file, ' ',
+                                           'gazebo:=ignition ',
+                                           'namespace:=', namespace, ' '])},
+            {'frame_prefix': frame_prefix},
         ],
     )
 
