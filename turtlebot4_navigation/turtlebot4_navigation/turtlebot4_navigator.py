@@ -55,17 +55,17 @@ class TurtleBot4Navigator(BasicNavigator):
         super().__init__()
 
         self.create_subscription(Dock,
-                                 '/dock',
+                                 'dock',
                                  self._dockCallback,
                                  qos_profile_sensor_data)
 
         self.create_subscription(PoseWithCovarianceStamped,
-                                 '/initialpose',
+                                 'initialpose',
                                  self._poseEstimateCallback,
                                  qos_profile_system_default)
 
-        self.undock_action_client = ActionClient(self, Undock, '/undock')
-        self.dock_action_client = ActionClient(self, DockServo, '/dock')
+        self.undock_action_client = ActionClient(self, Undock, 'undock')
+        self.dock_action_client = ActionClient(self, DockServo, 'dock')
 
     def getPoseStamped(self, position, rotation):
         """
