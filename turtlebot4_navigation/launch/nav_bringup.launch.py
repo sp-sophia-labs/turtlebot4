@@ -71,13 +71,13 @@ def generate_launch_description():
 
     declare_slam_cmd = DeclareLaunchArgument(
         'slam',
-        default_value='sync',
+        default_value='off',
         choices=['off', 'sync', 'async'],
         description='Whether to run a SLAM')
 
     declare_localization_cmd = DeclareLaunchArgument(
         'localization',
-        default_value='false',
+        default_value='true',
         choices=['true', 'false'],
         description='Whether to run localization')
 
@@ -93,7 +93,7 @@ def generate_launch_description():
 
     declare_use_sim_time_cmd = DeclareLaunchArgument(
         'use_sim_time',
-        default_value='false',
+        default_value='true',
         description='Use simulation (Gazebo) clock if true')
 
     declare_params_file_cmd = DeclareLaunchArgument(
