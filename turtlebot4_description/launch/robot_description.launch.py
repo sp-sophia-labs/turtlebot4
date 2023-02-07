@@ -45,12 +45,15 @@ def generate_launch_description():
                                        'turtlebot4.urdf.xacro'])
     namespace = LaunchConfiguration('namespace')
     frame_prefix = [namespace, '/']
+    remappings = [('/tf', 'tf'),
+                  ('/tf_static', 'tf_static')]
 
     robot_state_publisher = Node(
         package='robot_state_publisher',
         executable='robot_state_publisher',
         name='robot_state_publisher',
         namespace=namespace,
+        remappings=remappings,
         output='screen',
         parameters=[
             {'use_sim_time': LaunchConfiguration('use_sim_time')},
