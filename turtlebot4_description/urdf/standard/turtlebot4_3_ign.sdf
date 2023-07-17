@@ -1,0 +1,2270 @@
+<sdf version='1.7'>
+  <model name='turtlebot4'>
+    <link name='base_link'>
+      <inertial>
+        <pose>0.020821 0 0.076251 0 -0 0</pose>
+        <mass>2.73</mass>
+        <inertia>
+          <ixx>0.0196953</ixx>
+          <ixy>-1.37675e-06</ixy>
+          <ixz>0.000300694</ixz>
+          <iyy>0.0186642</iyy>
+          <iyz>5.64466e-06</iyz>
+          <izz>0.0362337</izz>
+        </inertia>
+      </inertial>
+      <collision name='base_link_fixed_joint_lump__create3_base_collision_collision'>
+        <pose>0 0 0.0492 0 -0 1.5708</pose>
+        <geometry>
+          <cylinder>
+            <length>0.06</length>
+            <radius>0.164</radius>
+          </cylinder>
+        </geometry>
+      </collision>
+      <collision name='base_link_fixed_joint_lump__shell_collision_collision_1'>
+        <pose>0 0 0.0942 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/shell_collision.dae</uri>
+          </mesh>
+        </geometry>
+      </collision>
+      <visual name='base_link_visual'>
+        <pose>0 0 0.0392 0 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://irobot_create_description/meshes/body_visual.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0117647 0.0117647 0.0117647 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <visual name='base_link_fixed_joint_lump__shell_link_visual_1'>
+        <pose>0 0 0.0942 1.5708 -0 1.5708</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/shell.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <sensor name='cliff_front_left' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0436332</min_angle>
+              <max_angle>0.0436332</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.0001</min>
+            <max>0.15</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+        <pose>0.16 0.045 0.0192 0 1.39626 1.1397</pose>
+      </sensor>
+      <sensor name='cliff_front_right' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0436332</min_angle>
+              <max_angle>0.0436332</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.0001</min>
+            <max>0.15</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+        <pose>0.16 -0.045 0.0192 0 1.39626 -1.1397</pose>
+      </sensor>
+      <sensor name='cliff_side_left' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0436332</min_angle>
+              <max_angle>0.0436332</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.0001</min>
+            <max>0.15</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+        <pose>0.06 0.145 0.0192 0 1.39626 2.92168</pose>
+      </sensor>
+      <sensor name='cliff_side_right' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0436332</min_angle>
+              <max_angle>0.0436332</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.0001</min>
+            <max>0.15</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+        <pose>0.06 -0.145 0.0192 -0 1.39626 -2.92168</pose>
+      </sensor>
+    </link>
+    <joint name='bumper_joint' type='fixed'>
+      <pose relative_to='base_link'>0 0 0.0392 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>bumper</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='bumper'>
+      <pose relative_to='bumper_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.08 0 0.02 0 -0 0</pose>
+        <mass>0.1</mass>
+        <inertia>
+          <ixx>0.00134838</ixx>
+          <ixy>4.54352e-08</ixy>
+          <ixz>1.44348e-06</ixz>
+          <iyy>0.000252174</iyy>
+          <iyz>-6.721e-10</iyz>
+          <izz>0.00154425</izz>
+        </inertia>
+      </inertial>
+      <collision name='bumper_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://irobot_create_description/meshes/bumper_collision.dae</uri>
+          </mesh>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <max_vel>0.01</max_vel>
+              <min_depth>0.001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+        <max_contacts>10</max_contacts>
+      </collision>
+      <visual name='bumper_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://irobot_create_description/meshes/bumper_visual.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+      <sensor name='bumper_contact_sensor' type='contact'>
+        <always_on>1</always_on>
+        <update_rate>62</update_rate>
+        <contact>
+          <collision>bumper_collision</collision>
+          <topic>robot3/bumper_contact</topic>
+        </contact>
+      </sensor>
+    </link>
+    <joint name='front_caster_joint' type='fixed'>
+      <pose relative_to='base_link'>0.125 0 0.0139 -1.5708 0 0</pose>
+      <parent>base_link</parent>
+      <child>front_caster_link</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_caster_link'>
+      <pose relative_to='front_caster_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>4e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>4e-07</iyy>
+          <iyz>0</iyz>
+          <izz>4e-07</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_caster_link_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>1</kd>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>0.1</mu>
+              <mu2>0.1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='front_caster_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <sphere>
+            <radius>0.01</radius>
+          </sphere>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='front_left_bottom_weight_block_joint' type='fixed'>
+      <pose relative_to='base_link'>0.060053 0.087588 0.097885 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_bottom_weight_block</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_left_bottom_weight_block'>
+      <pose relative_to='front_left_bottom_weight_block_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.1 0 0 0 -0 0</pose>
+        <mass>0.061</mass>
+        <inertia>
+          <ixx>9.3482e-06</ixx>
+          <ixy>-3.37434e-06</ixy>
+          <ixz>0</ixz>
+          <iyy>4.36382e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.28885e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='front_left_bottom_weight_block_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/weight_block.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0117647 0.0117647 0.0117647 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='front_left_top_weight_block_joint' type='fixed'>
+      <pose relative_to='base_link'>0.060053 0.087588 0.106885 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_top_weight_block</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_left_top_weight_block'>
+      <pose relative_to='front_left_top_weight_block_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.1 0 0 0 -0 0</pose>
+        <mass>0.061</mass>
+        <inertia>
+          <ixx>9.3482e-06</ixx>
+          <ixy>-3.37434e-06</ixy>
+          <ixz>0</ixz>
+          <iyy>4.36382e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.28885e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='front_left_top_weight_block_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/weight_block.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0117647 0.0117647 0.0117647 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='front_right_bottom_weight_block_joint' type='fixed'>
+      <pose relative_to='base_link'>0.060053 -0.087588 0.097885 3.14159 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_bottom_weight_block</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_right_bottom_weight_block'>
+      <pose relative_to='front_right_bottom_weight_block_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.1 0 0 0 -0 0</pose>
+        <mass>0.061</mass>
+        <inertia>
+          <ixx>9.3482e-06</ixx>
+          <ixy>-3.37434e-06</ixy>
+          <ixz>0</ixz>
+          <iyy>4.36382e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.28885e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='front_right_bottom_weight_block_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/weight_block.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0117647 0.0117647 0.0117647 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='front_right_top_weight_block_joint' type='fixed'>
+      <pose relative_to='base_link'>0.060053 -0.087588 0.106885 3.14159 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_top_weight_block</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_right_top_weight_block'>
+      <pose relative_to='front_right_top_weight_block_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0.1 0 0 0 -0 0</pose>
+        <mass>0.061</mass>
+        <inertia>
+          <ixx>9.3482e-06</ixx>
+          <ixy>-3.37434e-06</ixy>
+          <ixz>0</ixz>
+          <iyy>4.36382e-06</iyy>
+          <iyz>0</iyz>
+          <izz>1.28885e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='front_right_top_weight_block_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/weight_block.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0117647 0.0117647 0.0117647 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='imu_joint' type='fixed'>
+      <pose relative_to='base_link'>0.050613 0.043673 0.0844 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>imu_link</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='imu_link'>
+      <pose relative_to='imu_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='imu' type='imu'>
+        <always_on>1</always_on>
+        <update_rate>62</update_rate>
+        <imu>
+          <angular_velocity>
+            <x>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0</stddev>
+              </noise>
+            </z>
+          </angular_velocity>
+          <linear_acceleration>
+            <x>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0</stddev>
+              </noise>
+            </x>
+            <y>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0</stddev>
+              </noise>
+            </y>
+            <z>
+              <noise type='gaussian'>
+                <mean>0</mean>
+                <stddev>0</stddev>
+              </noise>
+            </z>
+          </linear_acceleration>
+        </imu>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_front_center_left_joint' type='fixed'>
+      <pose relative_to='base_link'>0.154 0 0.0572 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_front_center_left</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_front_center_left'>
+      <pose relative_to='ir_intensity_front_center_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_front_center_left' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_front_center_right_joint' type='fixed'>
+      <pose relative_to='base_link'>0.1396 -0.0651 0.0572 0 0 -0.436</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_front_center_right</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_front_center_right'>
+      <pose relative_to='ir_intensity_front_center_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_front_center_right' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_front_left_joint' type='fixed'>
+      <pose relative_to='base_link'>0.1396 0.0651 0.0572 0 -0 0.436</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_front_left</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_front_left'>
+      <pose relative_to='ir_intensity_front_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_front_left' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_front_right_joint' type='fixed'>
+      <pose relative_to='base_link'>0.099 -0.118 0.0572 0 0 -0.873</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_front_right</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_front_right'>
+      <pose relative_to='ir_intensity_front_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_front_right' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_left_joint' type='fixed'>
+      <pose relative_to='base_link'>0.099 0.118 0.0572 0 -0 0.873</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_left</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_left'>
+      <pose relative_to='ir_intensity_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_left' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_right_joint' type='fixed'>
+      <pose relative_to='base_link'>0.0399 -0.1488 0.0572 0 0 -1.309</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_right</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_right'>
+      <pose relative_to='ir_intensity_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_right' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_intensity_side_left_joint' type='fixed'>
+      <pose relative_to='base_link'>0.0399 0.1488 0.0572 0 -0 1.309</pose>
+      <parent>base_link</parent>
+      <child>ir_intensity_side_left</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_intensity_side_left'>
+      <pose relative_to='ir_intensity_side_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='ir_intensity_side_left' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>0</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>5</samples>
+              <resolution>1</resolution>
+              <min_angle>-0.0872665</min_angle>
+              <max_angle>0.0872665</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.025</min>
+            <max>0.2</max>
+            <resolution>1</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='ir_omni_joint' type='fixed'>
+      <pose relative_to='base_link'>0.153 0 0.0992 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>ir_omni</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='ir_omni'>
+      <pose relative_to='ir_omni_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='mouse_joint' type='fixed'>
+      <pose relative_to='base_link'>0.1015 0.087 0.0092 0 0 -0.785398</pose>
+      <parent>base_link</parent>
+      <child>mouse</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='mouse'>
+      <pose relative_to='mouse_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='front_left_tower_standoff_joint' type='fixed'>
+      <pose relative_to='base_link'>0.03063 0.11431 0.24177 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_left_tower_standoff</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_left_tower_standoff'>
+      <pose relative_to='front_left_tower_standoff_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.26</mass>
+        <inertia>
+          <ixx>1.9604e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.26231e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.26231e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_left_tower_standoff_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.205</length>
+            <radius>0.006</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='front_left_tower_standoff_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/tower_standoff.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='front_right_tower_standoff_joint' type='fixed'>
+      <pose relative_to='base_link'>0.03063 -0.11431 0.24177 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>front_right_tower_standoff</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='front_right_tower_standoff'>
+      <pose relative_to='front_right_tower_standoff_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.26</mass>
+        <inertia>
+          <ixx>1.9604e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.26231e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.26231e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='front_right_tower_standoff_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.205</length>
+            <radius>0.006</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='front_right_tower_standoff_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/tower_standoff.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='oakd_camera_bracket_joint' type='fixed'>
+      <pose relative_to='base_link'>-0.118 0 0.14677 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>oakd_camera_bracket</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_camera_bracket'>
+      <pose relative_to='oakd_camera_bracket_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.033</mass>
+        <inertia>
+          <ixx>5.79181e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>9.0679e-06</ixz>
+          <iyy>5.59785e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.40955e-05</izz>
+        </inertia>
+      </inertial>
+      <visual name='oakd_camera_bracket_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/camera_bracket.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='oakd_joint' type='fixed'>
+      <pose relative_to='oakd_camera_bracket'>0.0584 0 0.09676 0 -0 0</pose>
+      <parent>oakd_camera_bracket</parent>
+      <child>oakd_link</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_link'>
+      <pose relative_to='oakd_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.061</mass>
+        <inertia>
+          <ixx>2.02475e-06</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.52732e-05</iyy>
+          <iyz>0</iyz>
+          <izz>1.60554e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='oakd_link_collision'>
+        <pose>-0.011 0 -0.005 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.0225 0.097 0.03</size>
+          </box>
+        </geometry>
+      </collision>
+      <visual name='oakd_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/oakd_pro.dae</uri>
+          </mesh>
+        </geometry>
+      </visual>
+    </link>
+    <joint name='oakd_imu_joint' type='fixed'>
+      <pose relative_to='oakd_link'>0 0 0 -1.5708 -0 -1.5708</pose>
+      <parent>oakd_link</parent>
+      <child>oakd_imu_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_imu_frame'>
+      <pose relative_to='oakd_imu_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='oakd_left_camera_joint' type='fixed'>
+      <pose relative_to='oakd_link'>0 0.0375 0 0 -0 0</pose>
+      <parent>oakd_link</parent>
+      <child>oakd_left_camera_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_left_camera_frame'>
+      <pose relative_to='oakd_left_camera_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='oakd_left_camera_optical_joint' type='fixed'>
+      <pose relative_to='oakd_left_camera_frame'>0 0 0 -1.5708 -0 -1.5708</pose>
+      <parent>oakd_left_camera_frame</parent>
+      <child>oakd_left_camera_optical_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_left_camera_optical_frame'>
+      <pose relative_to='oakd_left_camera_optical_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='oakd_rgb_camera_joint' type='fixed'>
+      <pose relative_to='oakd_link'>0 0 0 0 -0 0</pose>
+      <parent>oakd_link</parent>
+      <child>oakd_rgb_camera_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_rgb_camera_frame'>
+      <pose relative_to='oakd_rgb_camera_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+      <sensor name='rgbd_camera' type='rgbd_camera'>
+        <camera>
+          <horizontal_fov>1.25</horizontal_fov>
+          <image>
+            <width>320</width>
+            <height>240</height>
+          </image>
+          <clip>
+            <near>0.3</near>
+            <far>100</far>
+          </clip>
+          <optical_frame_id>oakd_rgb_camera_optical_frame</optical_frame_id>
+        </camera>
+        <always_on>1</always_on>
+        <update_rate>30</update_rate>
+        <visualize>1</visualize>
+      </sensor>
+    </link>
+    <joint name='oakd_rgb_camera_optical_joint' type='fixed'>
+      <pose relative_to='oakd_rgb_camera_frame'>0 0 0 -1.5708 -0 -1.5708</pose>
+      <parent>oakd_rgb_camera_frame</parent>
+      <child>oakd_rgb_camera_optical_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_rgb_camera_optical_frame'>
+      <pose relative_to='oakd_rgb_camera_optical_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='oakd_right_camera_joint' type='fixed'>
+      <pose relative_to='oakd_link'>0 -0.0375 0 0 -0 0</pose>
+      <parent>oakd_link</parent>
+      <child>oakd_right_camera_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_right_camera_frame'>
+      <pose relative_to='oakd_right_camera_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='oakd_right_camera_optical_joint' type='fixed'>
+      <pose relative_to='oakd_right_camera_frame'>0 0 0 -1.5708 -0 -1.5708</pose>
+      <parent>oakd_right_camera_frame</parent>
+      <child>oakd_right_camera_optical_frame</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='oakd_right_camera_optical_frame'>
+      <pose relative_to='oakd_right_camera_optical_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.01</mass>
+        <inertia>
+          <ixx>1.66667e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>1.66667e-07</iyy>
+          <iyz>0</iyz>
+          <izz>1.66667e-07</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='rear_left_tower_standoff_joint' type='fixed'>
+      <pose relative_to='base_link'>-0.07607 0.09066 0.24177 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_left_tower_standoff</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rear_left_tower_standoff'>
+      <pose relative_to='rear_left_tower_standoff_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.26</mass>
+        <inertia>
+          <ixx>1.9604e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.26231e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.26231e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rear_left_tower_standoff_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.205</length>
+            <radius>0.006</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rear_left_tower_standoff_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/tower_standoff.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='rear_right_tower_standoff_joint' type='fixed'>
+      <pose relative_to='base_link'>-0.07607 -0.09066 0.24177 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>rear_right_tower_standoff</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rear_right_tower_standoff'>
+      <pose relative_to='rear_right_tower_standoff_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.26</mass>
+        <inertia>
+          <ixx>1.9604e-07</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>5.26231e-05</iyy>
+          <iyz>0</iyz>
+          <izz>5.26231e-05</izz>
+        </inertia>
+      </inertial>
+      <collision name='rear_right_tower_standoff_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.205</length>
+            <radius>0.006</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rear_right_tower_standoff_visual'>
+        <pose>0 0 0 0 1.5708 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/tower_standoff.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='rplidar_joint' type='fixed'>
+      <pose relative_to='base_link'>-0.04 0 0.192915 0 -0 1.5708</pose>
+      <parent>base_link</parent>
+      <child>rplidar_link</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='rplidar_link'>
+      <pose relative_to='rplidar_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.17</mass>
+        <inertia>
+          <ixx>0.000192667</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000122414</iyy>
+          <iyz>0</iyz>
+          <izz>0.000213081</izz>
+        </inertia>
+      </inertial>
+      <collision name='rplidar_link_collision'>
+        <pose>0 0.013 -0.019 0 -0 0</pose>
+        <geometry>
+          <box>
+            <size>0.071 0.1 0.06</size>
+          </box>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='rplidar_link_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/rplidar.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0.0117647 0.0117647 0.0117647 1</diffuse>
+          <specular>0 0 0 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+      <sensor name='rplidar' type='gpu_lidar'>
+        <update_rate>62</update_rate>
+        <visualize>1</visualize>
+        <always_on>1</always_on>
+        <lidar>
+          <scan>
+            <horizontal>
+              <samples>640</samples>
+              <resolution>1</resolution>
+              <min_angle>-3.14159</min_angle>
+              <max_angle>3.14159</max_angle>
+            </horizontal>
+            <vertical>
+              <samples>1</samples>
+              <resolution>1</resolution>
+              <min_angle>0</min_angle>
+              <max_angle>0</max_angle>
+            </vertical>
+          </scan>
+          <range>
+            <min>0.164</min>
+            <max>12</max>
+            <resolution>0.01</resolution>
+          </range>
+        </lidar>
+      </sensor>
+    </link>
+    <joint name='tower_sensor_plate_joint' type='fixed'>
+      <pose relative_to='base_link'>0 0 0.34677 0 -0 0</pose>
+      <parent>base_link</parent>
+      <child>tower_sensor_plate</child>
+      <axis>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+      </axis>
+      <physics>
+        <ode>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+        </ode>
+      </physics>
+    </joint>
+    <link name='tower_sensor_plate'>
+      <pose relative_to='tower_sensor_plate_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.332</mass>
+        <inertia>
+          <ixx>0.000929823</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>0.000830335</iyy>
+          <iyz>0</iyz>
+          <izz>0.00175986</izz>
+        </inertia>
+      </inertial>
+      <collision name='tower_sensor_plate_collision'>
+        <pose>0 0 0.001 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.003</length>
+            <radius>0.137</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode/>
+          </contact>
+          <friction>
+            <ode/>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='tower_sensor_plate_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <mesh>
+            <scale>1 1 1</scale>
+            <uri>model://turtlebot4_description/meshes/tower_sensor_plate.dae</uri>
+          </mesh>
+        </geometry>
+        <material>
+          <diffuse>0 0 0 1</diffuse>
+          <specular>0.313726 0.313726 0.313726 1</specular>
+          <emissive>0 0 0 1</emissive>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_drop_left_joint' type='prismatic'>
+      <pose relative_to='base_link'>0 0.1165 0.0402 -1.5708 0 0</pose>
+      <parent>base_link</parent>
+      <child>wheel_drop_left</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.03</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>50</damping>
+          <friction>0.1</friction>
+          <spring_reference>0.03</spring_reference>
+          <spring_stiffness>450</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>0</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>0</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='wheel_drop_left'>
+      <pose relative_to='wheel_drop_left_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>2.08333e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.08333e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.08333e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='left_wheel_joint' type='revolute'>
+      <pose relative_to='wheel_drop_left'>0 0 0 0 -0 0</pose>
+      <parent>wheel_drop_left</parent>
+      <child>left_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='left_wheel'>
+      <pose relative_to='left_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>6.76531e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.76531e-05</iyy>
+          <iyz>0</iyz>
+          <izz>0.000127806</izz>
+        </inertia>
+      </inertial>
+      <collision name='left_wheel_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.03575</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='left_wheel_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.03575</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <joint name='wheel_drop_right_joint' type='prismatic'>
+      <pose relative_to='base_link'>0 -0.1165 0.0402 -1.5708 0 0</pose>
+      <parent>base_link</parent>
+      <child>wheel_drop_right</child>
+      <axis>
+        <xyz>0 1 0</xyz>
+        <limit>
+          <lower>0</lower>
+          <upper>0.03</upper>
+          <effort>0</effort>
+          <velocity>0</velocity>
+        </limit>
+        <dynamics>
+          <damping>50</damping>
+          <friction>0.1</friction>
+          <spring_reference>0.03</spring_reference>
+          <spring_stiffness>450</spring_stiffness>
+        </dynamics>
+      </axis>
+      <physics>
+        <provide_feedback>0</provide_feedback>
+        <ode>
+          <implicit_spring_damper>1</implicit_spring_damper>
+          <cfm_damping>1</cfm_damping>
+          <limit>
+            <cfm>0</cfm>
+            <erp>0.2</erp>
+          </limit>
+          <provide_feedback>0</provide_feedback>
+        </ode>
+      </physics>
+    </joint>
+    <link name='wheel_drop_right'>
+      <pose relative_to='wheel_drop_right_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.05</mass>
+        <inertia>
+          <ixx>2.08333e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>2.08333e-05</iyy>
+          <iyz>0</iyz>
+          <izz>2.08333e-05</izz>
+        </inertia>
+      </inertial>
+    </link>
+    <joint name='right_wheel_joint' type='revolute'>
+      <pose relative_to='wheel_drop_right'>0 0 0 0 -0 0</pose>
+      <parent>wheel_drop_right</parent>
+      <child>right_wheel</child>
+      <axis>
+        <xyz>0 0 1</xyz>
+        <limit>
+          <lower>-1e+16</lower>
+          <upper>1e+16</upper>
+        </limit>
+        <dynamics>
+          <spring_reference>0</spring_reference>
+          <spring_stiffness>0</spring_stiffness>
+        </dynamics>
+      </axis>
+    </joint>
+    <link name='right_wheel'>
+      <pose relative_to='right_wheel_joint'>0 0 0 0 -0 0</pose>
+      <inertial>
+        <pose>0 0 0 0 -0 0</pose>
+        <mass>0.2</mass>
+        <inertia>
+          <ixx>6.76531e-05</ixx>
+          <ixy>0</ixy>
+          <ixz>0</ixz>
+          <iyy>6.76531e-05</iyy>
+          <iyz>0</iyz>
+          <izz>0.000127806</izz>
+        </inertia>
+      </inertial>
+      <collision name='right_wheel_collision'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.03575</radius>
+          </cylinder>
+        </geometry>
+        <surface>
+          <contact>
+            <ode>
+              <kp>1e+06</kp>
+              <kd>100</kd>
+              <max_vel>1</max_vel>
+              <min_depth>0.0001</min_depth>
+            </ode>
+          </contact>
+          <friction>
+            <ode>
+              <mu>1</mu>
+              <mu2>1</mu2>
+            </ode>
+          </friction>
+        </surface>
+      </collision>
+      <visual name='right_wheel_visual'>
+        <pose>0 0 0 0 -0 0</pose>
+        <geometry>
+          <cylinder>
+            <length>0.015</length>
+            <radius>0.03575</radius>
+          </cylinder>
+        </geometry>
+        <material>
+          <script>
+            <name>Gazebo/DarkGrey</name>
+            <uri>file://media/materials/scripts/gazebo.material</uri>
+          </script>
+        </material>
+      </visual>
+    </link>
+    <plugin name='ign_ros2_control::IgnitionROS2ControlPlugin' filename='libign_ros2_control-system.so'>
+      <parameters>/home/robotics-101/workspace/shroom_2/simulation_ws/install/irobot_create_control/share/irobot_create_control/config/control.yaml</parameters>
+      <ros>
+        <remapping>~/odom:=odom</remapping>
+        <remapping>/tf:=tf</remapping>
+        <remapping>/tf_static:=tf_static</remapping>
+        <remapping>/diagnostics:=diagnostics</remapping>
+        <namespace>robot3</namespace>
+      </ros>
+    </plugin>
+    <plugin name='ignition::gazebo::systems::PosePublisher' filename='libignition-gazebo-pose-publisher-system.so'>
+      <publish_link_pose>1</publish_link_pose>
+      <publish_nested_model_pose>1</publish_nested_model_pose>
+      <use_pose_vector_msg>1</use_pose_vector_msg>
+      <update_frequency>62</update_frequency>
+    </plugin>
+    <plugin name='ignition::gazebo::systems::Contact' filename='libignition-gazebo-contact-system.so'/>
+    <static>0</static>
+    <plugin name='ignition::gazebo::systems::Sensors' filename='libignition-gazebo-sensors-system.so'>
+      <render_engine>ogre</render_engine>
+    </plugin>
+  </model>
+
+  <plugin name="ign::sim" filename="dummy">
+    <performer name="perf_turtlebot4">
+      <ref>turtlebot4</ref>
+    </performer>
+  </plugin>
+</sdf>
