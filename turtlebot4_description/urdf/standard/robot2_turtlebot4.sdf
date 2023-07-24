@@ -1,7 +1,7 @@
 <?xml version="1.0" ?>
 <sdf version='1.7'>
 
-  <model name='robot2/turtlebot4'>
+  <model name='robot2'>
     <link name='base_link'>
       <inertial>
         <pose>0.020821 0 0.076251 0 -0 0</pose>
@@ -252,7 +252,7 @@
         <update_rate>62</update_rate>
         <contact>
           <collision>bumper_collision</collision>
-          <topic>robot2/turtlebot4/bumper_contact</topic>
+          <topic>robot2/bumper_contact</topic>
         </contact>
       </sensor>
     </link>
@@ -2248,7 +2248,7 @@
         <remapping>/tf:=tf</remapping>
         <remapping>/tf_static:=tf_static</remapping>
         <remapping>/diagnostics:=diagnostics</remapping>
-        <namespace>robot2/turtlebot4</namespace>
+        <namespace>robot2</namespace>
       </ros>
     </plugin>
     <plugin name='ignition::gazebo::systems::PosePublisher' filename='libignition-gazebo-pose-publisher-system.so'>
@@ -2266,7 +2266,7 @@
 
   <plugin name="gz::sim" filename="dummy">
     <performer name="perf_turtlebot4">
-      <ref>robot2/turtlebot4</ref>
+      <ref>robot2</ref>
     </performer>
   </plugin>
 </sdf>
